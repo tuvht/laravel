@@ -18,3 +18,5 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/edit-profile', 'UserController@editProfile')->name('edit-profile');
 
 Route::post('/update-profile', 'UserController@updateProfile')->name('update-profile');
+
+Route::get('/category', 'CategoryController@index')->name('category');
