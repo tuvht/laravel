@@ -25,17 +25,14 @@
 				@endif
 			<div class="panel-body">
 				<div class="table-responsive">
-					@if (Session()->has('flash_level'))
-	                <div class="alert alert-{!! Session::get('flash_type') !!}" role="alert">
-	                    {!! Session::get('flash_massage') !!}
-	                </div>
-	                @endif
 					<table class="table table-hover">
 						<thead>
 							<tr>										
 								<th>#</th>										
 								<th>Name</th>
-								<th>Description</th>										
+								<th>Category</th>
+								<th>Description</th>	
+								<th>Create at</th>									
 								<th>Action</th>
 							</tr>
 						</thead>
@@ -43,11 +40,13 @@
 						@foreach($data as $key => $row)
 							<tr>
 								<td>{!!$key + 1!!}</td>
-								<td>{!!$row->name!!}</td>
+								<td>{!!$row->product_name!!}</td>
+								<td>{!!$row->category_name!!}</td>
 								<td><small>{!!$row->description!!}</small></td>
+								<td>{!!$row->created_at!!}</td>
 								<td style="width: 120px;">
 								    <a title="Edit"
-								    	href="{{ route('category/edit' . $row->id) }}"
+								    	href="{{ route('product/edit' . $row->product_id) }}"
                                         >
                                         Edit
                                     </a>
@@ -56,9 +55,9 @@
                                                  document.getElementById('delete-form').submit();">
                                         Remove
                                     </a>
-								    <form id="delete-form" action="{{ route('category/delete') }}" method="POST" style="display: none;">
+								    <form id="delete-form" action="{{ route('product/delete') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
-                                        <input type="hidden" name="id" value="{{!!$row->id)}}">
+                                        <input type="hidden" name="id" value="{{!!$row->product_id)}}">
                                     </form>
 								</td>
 							</tr>	
