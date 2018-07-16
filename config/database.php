@@ -78,6 +78,18 @@ return [
             'prefix' => '',
         ],
 
+        'oracle' => [
+            'driver'        => 'oracle',
+            'tns'           => env('DB_TNS', '(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.30.110.93)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = finnuat5.fecredit.com.vn)))'),
+            'host'          => env('DB_HOST', ''),
+            'port'          => env('DB_PORT', '1521'),
+            'database'      => env('DB_DATABASE', ''),
+            'username'      => env('DB_USERNAME', 'MULCASTRANS'),
+            'password'      => env('DB_PASSWORD', 'ANSF1UAT05'),
+            'charset'       => env('DB_CHARSET', 'AL32UTF8'),
+            'prefix'        => env('DB_PREFIX', ''),
+            'prefix_schema' => env('DB_SCHEMA_PREFIX', ''),
+        ],
     ],
 
     /*

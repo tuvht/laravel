@@ -19,4 +19,6 @@ Route::get('/edit-profile', 'UserController@editProfile')->name('edit-profile');
 
 Route::post('/update-profile', 'UserController@updateProfile')->name('update-profile');
 
-Route::get('/category', 'CategoryController@index')->name('category');
+Route::get('/categories', 'CategoryController@index')->name('categories');
+
+Route::get('/products', 'ProductController@index')->name('products');
