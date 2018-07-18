@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title', 'Forgot password')
 @section('content')
 <div class="container">
     <div class="row">
